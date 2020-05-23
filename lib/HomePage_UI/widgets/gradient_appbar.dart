@@ -12,15 +12,32 @@ class GradientAppBar extends StatelessWidget {
     final double statusBarHeight = MediaQuery.of(context).padding.top;
     return Container(
       padding: EdgeInsets.only(top: statusBarHeight),
-      child: Center(
-        child: Text(
-          title,
-          style: GoogleFonts.poppins(
-            fontSize: 35.0,
-            fontWeight: FontWeight.w600,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          Icon(
+            Icons.menu,
             color: Colors.white,
+            size: 30.0,
           ),
-        ),
+          SizedBox(width: 100),
+          Center(
+            child: Text(
+              title,
+              style: GoogleFonts.poppins(
+                fontSize: 35.0,
+                fontWeight: FontWeight.w600,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          SizedBox(width: 100),
+          Icon(
+            Icons.search,
+            color: Colors.white,
+            size: 30,
+          ),
+        ],
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
